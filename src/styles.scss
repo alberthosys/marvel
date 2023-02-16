@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: rgb(63, 76, 119) 70.2%;
+  --secondary: rgb(32, 38, 57) 11.4%;
+  --success: #22c55e;
+  --info: #3b82f6;
+  --warning: #ffa200;
+  --help: #430081;
+  --danger: #ef4444;
+  --white: white;
+  --black: black;
+  --grayLight: rgb(148, 159, 196);
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    202deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(238, 238, 251, 1) 0%,
+    rgba(219, 249, 255, 1) 100%
+  );
+  button {
+  }
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.dialog {
+  width: 650px;
+}
+
+.mat-error {
+  color: red;
+  padding-left: 1rem;
+  font-size: 0.5;
+}

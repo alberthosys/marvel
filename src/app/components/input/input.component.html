@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+  <span class="p-float-label">
+    <input
+      formControlName="{{ key }}"
+      id="float-input"
+      type="text"
+      pInputText
+    />
+    <label for="float-input">{{ label }}</label>
+  </span>
+  <div>
+    <p class="mat-error" *ngFor="let validation of validations">
+      <span
+        *ngIf="
+          form.get(key)?.hasError(validation.type) &&
+          (form.get(key)?.dirty || form.get(key)?.touched)
+        "
+      >
+        {{ validation.message }}
+      </span>
+    </p>
+  </div>
+</form>

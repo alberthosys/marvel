@@ -1,0 +1,28 @@
+<p-card header="{{ title }}" styleClass="shadow-2">
+  <ng-template pTemplate="header">
+    <ng-content select="[header]"></ng-content>
+  </ng-template>
+
+  <ng-content select="[body]"></ng-content>
+
+  <ng-template pTemplate="footer">
+    <div style="display: flex">
+      <div style="width: 100%">
+        <icon-button
+          label="Close"
+          icon="pi-times"
+          color="secondary"
+          (click)="actionNegativeEvent()"
+        ></icon-button>
+      </div>
+      <div style="width: 100%; display: flex; justify-content: end">
+        <icon-button
+          label="Save"
+          icon="pi-check"
+          color="primary"
+          (click)="actionPositiveEvent()"
+        ></icon-button>
+      </div>
+    </div>
+  </ng-template>
+</p-card>

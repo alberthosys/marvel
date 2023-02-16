@@ -1,0 +1,27 @@
+<app-dialog-layout
+  title="{{ hero.name }}"
+  (actionNegative)="close()"
+  (actionPositive)="update()"
+>
+  <ng-container header>
+    <img
+      alt="Not found"
+      width="150"
+      height="450"
+      src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}"
+    />
+  </ng-container>
+  <ng-container body>
+    <app-input
+      [form]="form"
+      key="name"
+      label="Name"
+      [validations]="validationMessages.name"
+    ></app-input>
+    <app-text-area
+      [form]="form"
+      key="description"
+      label="Description"
+    ></app-text-area>
+  </ng-container>
+</app-dialog-layout>

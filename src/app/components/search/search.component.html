@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <span class="p-input-icon-left">
+    <input
+      type="text"
+      pInputText
+      formControlName="{{ key }}"
+      placeholder="{{ placeholder }}"
+      (keydown.enter)="keyDownEnterEvent()"
+    />
+  </span>
+  <icon-button
+    label="Buscar"
+    icon="pi-search"
+    (click)="keyDownEnterEvent()"
+  ></icon-button>
+</form>

@@ -1,0 +1,21 @@
+<div class="search">
+  <app-search
+    [form]="formSearch"
+    key="name"
+    placeholder="Name"
+    (keyDownEnter)="searchHero()"
+  ></app-search>
+</div>
+<div class="table">
+  <app-table
+    title="Heroes"
+    [list]="heroes"
+    [conlumnsConfig]="columnsConfig"
+    [totalRecords]="totalRecords"
+    [maxRows]="20"
+    [pageIndex]="params.offset"
+    [rowHover]="true"
+    (pageChange)="pageChange($event)"
+    (selectRow)="showHero($event)"
+  ></app-table>
+</div>

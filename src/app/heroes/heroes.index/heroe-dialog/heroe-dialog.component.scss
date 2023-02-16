@@ -1,0 +1,15 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 100%;
+  .image-content {
+    width: 35%;
+    background-color: blue;
+  }
+  .form {
+    width: 100%;
+    background-color: yellow;
+  }
+}

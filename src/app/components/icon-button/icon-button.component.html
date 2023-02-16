@@ -1,0 +1,9 @@
+<button
+  pButton
+  label="{{ label }}"
+  class="{{ type == 'full' ? '' : 'p-button-outlined' }}
+   {{ colors[color] }}
+   {{ rounded ? 'p-button-rounded' : '' }}"
+>
+  <i *ngIf="icon" class="pi {{ icon }} {{ icon ? 'mr-1' : '' }}"></i>
+</button>

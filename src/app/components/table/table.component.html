@@ -1,0 +1,47 @@
+<p-table [columns]="conlumnsConfig" [value]="list" [rowHover]="rowHover">
+  <ng-template pTemplate="caption" *ngIf="title">
+    {{ title | titlecase }}
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{ col.key | titlecase }}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr
+      (dblclick)="selectRowEvent(rowData)"
+      class="{{ rowHover ? 'mouse-pointer' : '' }}"
+    >
+      <td *ngFor="let col of columns">
+        <div [ngSwitch]="col.type">
+          <div *ngSwitchCase="">
+            {{ col.getValue(rowData) }}
+          </div>
+          <div *ngSwitchCase="'image'">
+            <p-image
+              src="{{ col.getValue(rowData) }}"
+              alt="Not load"
+              width="100"
+              height="110"
+              [preview]="true"
+            ></p-image>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="summary">
+    <p-paginator
+      (onPageChange)="onPageChange($event)"
+      [rows]="maxRows"
+      [totalRecords]="totalRecords"
+      [pageLinkSize]="5"
+      [first]="pageIndex"
+      [rowsPerPageOptions]="pagesConfig"
+    ></p-paginator>
+    Total: {{ totalRecords }}
+  </ng-template>
+</p-table>
