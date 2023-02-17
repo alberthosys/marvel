@@ -21,10 +21,11 @@ export class TableComponent {
 
   onPageChange(pageChange: any): void {
     const params = {
-      offset: pageChange.page * this.maxRows,
+      offset: pageChange.page * pageChange.rows,
       page: pageChange.page,
       limit: pageChange.rows,
     };
+    console.log(params);
     this.pageChange.emit(params);
   }
 
